@@ -41,6 +41,17 @@
 			<artifactId>jersey-servlet</artifactId>
 			<version>1.17</version>
 		</dependency>
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>7.0.32</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
