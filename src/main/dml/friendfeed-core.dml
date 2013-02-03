@@ -1,0 +1,12 @@
+package com.friendfeed.core.domain;
+
+class FriendFeed {
+    
+}
+
+relation DomainRootHasFriendFeed {
+    .pt.ist.fenixframework.DomainRoot playsRole domainRoot;
+    FriendFeed playsRole friendFeed {
+	multiplicity 1..1;
+    }
+}
