@@ -3,3 +3,5 @@
 .settings/
 target/
 configuration.properties
+.DS_Store
+bin/
