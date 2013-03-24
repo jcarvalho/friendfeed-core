@@ -11,72 +11,46 @@
 	<url>http://friendfeed.github.com</url>
 
 	<properties>
-		<fenixframework.version>2.0</fenixframework.version>
-		<fenixframework.code.generator>pt.ist.fenixframework.backend.mem.MemCodeGenerator</fenixframework.code.generator>
+		<fenixframework.version>2.1-SNAPSHOT</fenixframework.version>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>1.17</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.17</version>
-		</dependency>
-		<dependency>
-			<groupId>pt.ist</groupId>
-			<artifactId>fenix-framework-core</artifactId>
-			<version>${fenixframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>pt.ist</groupId>
-			<artifactId>fenix-framework-backend-mem</artifactId>
-			<version>${fenixframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.17</version>
-		</dependency>
-		<dependency>
-			<groupId>org.twitter4j</groupId>
-			<artifactId>twitter4j-core</artifactId>
-			<version>3.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-servlet-api</artifactId>
-			<version>7.0.32</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>pt.ist</groupId>
-				<artifactId>dml-maven-plugin</artifactId>
+				<artifactId>ff-maven-plugin</artifactId>
 				<version>${fenixframework.version}</version>
-				<configuration>
-					<codeGeneratorClassName>${fenixframework.code.generator}</codeGeneratorClassName>
-					<params>
-						<ptIstDapEnable>true</ptIstDapEnable>
-					</params>
-				</configuration>
 				<executions>
 					<execution>
 						<goals>
-							<goal>generate-domain</goal>
-							<goal>post-compile</goal>
+							<goal>ff-generate-domain</goal>
+							<goal>ff-post-compile</goal>
+							<goal>ff-process-atomic-annotations</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<proc>none</proc>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>pt.ist</groupId>
+			<artifactId>fenix-framework-core</artifactId>
+			<version>${fenixframework.version}</version>
+		</dependency>
+	</dependencies>
+
 
 	<repositories>
 		<repository>

@@ -9,20 +9,20 @@ public class ConfigurationManager {
     private static final Properties properties = new Properties();
 
     static {
-	try {
-	    InputStream stream = ConfigurationManager.class.getClassLoader().getResourceAsStream("/configuration.properties");
-	    properties.load(stream);
-	} catch (IOException e) {
-	    throw new Error(e);
-	}
+        try {
+            InputStream stream = ConfigurationManager.class.getClassLoader().getResourceAsStream("/configuration.properties");
+            properties.load(stream);
+        } catch (IOException e) {
+            throw new Error(e);
+        }
     }
 
     public static String getConsumerKey() {
-	return properties.getProperty("oauth.consumerkey");
+        return properties.getProperty("oauth.consumerkey");
     }
 
     public static String getConsumerSecret() {
-	return properties.getProperty("oauth.consumersecret");
+        return properties.getProperty("oauth.consumersecret");
     }
 
 }
