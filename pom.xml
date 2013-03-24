@@ -4,13 +4,14 @@
 
 	<groupId>com.friendfeed</groupId>
 	<artifactId>friendfeed-core</artifactId>
-	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<version>0.1-SNAPSHOT</version>
 
-	<name>friendfeed-core Maven Webapp</name>
-	<url>http://friendfeed.github.com</url>
+	<name>FriendFeed Core</name>
+	<url>http://jcarvalho.github.com/friendfeed-core</url>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<fenixframework.version>2.1-SNAPSHOT</fenixframework.version>
 	</properties>
 
