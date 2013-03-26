@@ -6,7 +6,7 @@ class FriendFeed {
 
 class User {
     String username (REQUIRED);
-    String email (REQUIRED);
+    String email;
     String password;
 }
 
