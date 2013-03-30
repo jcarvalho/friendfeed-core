@@ -6,22 +6,19 @@ import com.friendfeed.core.domain.User;
 
 public class Authenticate {
 
-    public static User login(String username, String password) {
-        User user = User.findByUsername(username);
-        if (user == null) {
-            user = createUser(username);
-        }
-        return user;
+    public static User login(String screenName, String password) {
+        return User.findByUsername(screenName);
     }
 
     @Atomic
-    private static User createUser(String username) {
-        User user = User.findByUsername(username);
-        if (user != null) {
-            return user;
+    public static boolean createUser(String name, String screenName, String email, String password) {
+        if (User.findByUsername(screenName) != null) {
+            return false;
         }
-        user = new User(username);
-        return user;
+        User user = new User(screenName);
+        user.setEmail(email);
+        user.setPassword(password);
+        return true;
     }
 
 }
