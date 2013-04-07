@@ -5,9 +5,38 @@ class FriendFeed {
 }
 
 class User {
-    String username (REQUIRED);
-    String email;
-    String password;
+    String screenName (REQUIRED);
+    String email (REQUIRED);
+    String name (REQUIRED);
+}
+
+class login.Login {
+    
+}
+
+class login.TwitterLogin extends login.Login {
+    
+}
+
+class login.FacebookLogin extends login.Login {
+    
+}
+
+class login.GoogleLogin extends login.Login {
+    
+}
+
+class login.PasswordLogin extends login.Login {
+    String password (REQUIRED);
+}
+
+relation UserHasLogin {
+    User playsRole user {
+        multiplicity 1..1;
+    }
+    login.Login playsRole logins {
+        multiplicity 1..*;
+    }
 }
 
 relation DomainRootHasFriendFeed {

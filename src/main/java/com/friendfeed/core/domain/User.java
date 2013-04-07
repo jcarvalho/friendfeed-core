@@ -2,15 +2,17 @@ package com.friendfeed.core.domain;
 
 public class User extends User_Base {
 
-    public User(String username) {
+    public User(String name, String screenName, String email) {
         super();
         this.setFriendFeed(FriendFeed.getInstance());
-        this.setUsername(username);
+        this.setName(name);
+        this.setScreenName(screenName);
+        this.setEmail(email);
     }
 
-    public static User findByUsername(String username) {
+    public static User findByScreenName(String screenName) {
         for (User user : FriendFeed.getInstance().getUsers()) {
-            if (user.getUsername().equals(username)) {
+            if (user.getScreenName().equals(screenName)) {
                 return user;
             }
         }
