@@ -2,7 +2,7 @@ package com.friendfeed.core.security;
 
 import com.friendfeed.core.domain.User;
 
-public interface OperationType {
+public interface Authorization {
 
     /**
      * Returns an assessment regarding whether the specified {@link User} is allowed to execute this operation.
