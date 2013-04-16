@@ -11,7 +11,7 @@ public class User extends User_Base {
     }
 
     public static User findByScreenName(String screenName) {
-        for (User user : FriendFeed.getInstance().getUsers()) {
+        for (User user : FriendFeed.getInstance().getUserSet()) {
             if (user.getScreenName().equals(screenName)) {
                 return user;
             }

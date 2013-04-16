@@ -34,7 +34,7 @@ relation UserHasLogin {
     User playsRole user {
         multiplicity 1..1;
     }
-    login.Login playsRole logins {
+    login.Login playsRole login {
         multiplicity 1..*;
     }
 }
@@ -50,7 +50,7 @@ relation FriendFeedHasUsers {
     FriendFeed playsRole friendFeed {
         multiplicity 1..1;
     }
-    User playsRole users {
+    User playsRole user {
         multiplicity *;
     }
 }

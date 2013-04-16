@@ -17,7 +17,7 @@ public class Authenticate {
             return false;
         }
         User user = new User(name, screenName, email);
-        user.addLogins(new PasswordLogin(password));
+        user.addLogin(new PasswordLogin(password));
         return true;
     }
 
