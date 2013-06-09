@@ -1,94 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.friendfeed</groupId>
-	<artifactId>friendfeed-core</artifactId>
-	<packaging>jar</packaging>
-	<version>0.1-SNAPSHOT</version>
+    <parent>
+        <groupId>pt.ist</groupId>
+        <artifactId>fenix-framework-project</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-	<name>FriendFeed Core</name>
-	<url>http://jcarvalho.github.com/friendfeed-core</url>
+    <groupId>com.friendfeed</groupId>
+    <artifactId>friendfeed-core</artifactId>
+    <version>0.1-SNAPSHOT</version>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<fenixframework.version>2.1.0-rc2</fenixframework.version>
-	</properties>
+    <name>FriendFeed Core</name>
+    <url>http://jcarvalho.github.com/friendfeed-core</url>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>pt.ist</groupId>
-				<artifactId>ff-maven-plugin</artifactId>
-				<version>${fenixframework.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>ff-generate-domain</goal>
-							<goal>ff-post-compile</goal>
-							<goal>ff-process-atomic-annotations</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<archive>
-						<index>true</index>
-						<manifest>
-							<addClasspath>true</addClasspath>
-						</manifest>
-						<manifestEntries>
-							<Implementation-Title>${project.name}</Implementation-Title>
-							<Implementation-Version>${project.version}</Implementation-Version>
-							<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>${project.artifactId}</artifactId>
-						</manifestEntries>
-					</archive>
-					<excludes>
-						<exclude>**/*_Base*</exclude>
-						<exclude>**/pt/ist/fenixframework/ValueTypeSerializer*</exclude>
-						<exclude>**/pt/ist/fenixframework/backend/CurrentBackEndId*</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>pt.ist</groupId>
-			<artifactId>fenix-framework-core-api</artifactId>
-			<version>${fenixframework.version}</version>
-		</dependency>
-	</dependencies>
-
-
-	<repositories>
-		<repository>
-			<id>fenix-ashes-maven-repository</id>
-			<url>https://fenix-ashes.ist.utl.pt/maven-public</url>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>fenix-ashes-maven-repository</id>
-			<url>https://fenix-ashes.ist.utl.pt/maven-public</url>
-		</pluginRepository>
-	</pluginRepositories>
+    <repositories>
+        <repository>
+            <id>fenix-ashes-maven-repository</id>
+            <url>https://fenix-ashes.ist.utl.pt/nexus/content/groups/fenix-ashes-maven-repository</url>
+        </repository>
+    </repositories>
 
 </project>
